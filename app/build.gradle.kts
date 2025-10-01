@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    //Plugins para parcelizar
+    alias(libs.plugins.jetbrainsKotlinSerialization)
+    alias(libs.plugins.kotlin.parcelize)
+
 }
 
 android {
@@ -49,7 +54,12 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    //Implementa las librerias de Navigation Compose
     implementation(libs.androidx.navigation.compose.android)
+
+    //Implementa las librerias de Kotlinx para parcelizar (o utilizar JSON)
+    implementation(libs.kotlinx.serialization.json)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
